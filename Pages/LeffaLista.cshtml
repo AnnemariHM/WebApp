@@ -6,5 +6,33 @@
 
 <div class="text-center">
     <h1>Leffalista</h1>
-    <p>GalaxyCinema - Movies without limits.</p>
+   
 </div>
+
+<h1>LeffaLista</h1>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Size</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var leffa in Model.LeffaLista)
+    {
+        <tr>
+            <td>@leffa.Name</td>
+            <td>@($"{leffa.Price:C}")</td>
+            <td>@leffa.Size</td>
+            <td>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@leffa.Id">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
