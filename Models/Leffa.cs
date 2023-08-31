@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApp.Models;
 
+//Leffa-class, leffan ominaisuudet taulukossa
 public class Leffa
 {
     public int Id { get; set; }
