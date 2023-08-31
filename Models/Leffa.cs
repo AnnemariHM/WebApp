@@ -16,4 +16,4 @@ public class Leffa
     public double Kesto { get; set; }
 }
 
-public enum Genret { action, adventure, comedy, drama, fantasy, horror, musicals, mystery, romance, sports, thriller, Western, }
+public enum Genret { action, adventure, comedy, drama, fantasy, horror, musicals, mystery, romance, sports, thriller, western, }
