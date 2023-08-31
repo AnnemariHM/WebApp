@@ -1,13 +1,52 @@
 ﻿@page
 @model WebApp.Pages.LeffaListaModel
 @{
-    ViewData["Title"] = "leffalista";
+    ViewData["Title"] = "Leffalista";
 }
 
 <div class="text-center">
     <h1>Leffalista</h1>
-
 </div>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="NewLeffa.Nimi" class="control-label"></label>
+        <input asp-for="NewLeffa.Nimi" class="form-control" />
+        <span asp-validation-for="NewLeffa.Nimi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewLeffa.Kieli" class="control-label"></label>
+        <input asp-for="NewLeffa.Kieli" class="form-control" />
+        <span asp-validation-for="NewLeffa.Kieli" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewLeffa.Genre" class="control-label"></label>
+        <select asp-for="NewLeffa.Genre" class="form-control">
+            <option value="">-- Valitse Genre --</option>
+            <option value="action">action</option>
+            <option value="adventure">adventure</option>
+            <option value="comedy">comedy</option>
+            <option value="drama">drama</option>
+            <option value="fantasy">fantasy</option>
+            <option value="horror">horror</option>
+            <option value="musicals">musicals</option>
+            <option value="mystery">mystery</option>
+            <option value="romance">romance</option>
+            <option value="sports">sports</option>
+            <option value="sports">sports</option>
+        </select>
+        <span asp-validation-for="NewLeffa.Genre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewLeffa.Kesto" class="control-label"></label>
+        <input asp-for="NewLeffa.Kesto" class="form-control" />
+        <span asp-validation-for="NewLeffa.Kesto" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
 
 <table class="table mt-5">
     <thead>
@@ -36,3 +75,7 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

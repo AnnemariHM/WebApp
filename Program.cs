@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<LeffaService>();
+builder.Services.AddSingleton<LeffaService>();
 
 var app = builder.Build();
 

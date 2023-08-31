@@ -12,14 +12,14 @@ namespace WebApp.Services
             _leffat = new List<Leffa>();
         }
 
-        public IList<Leffa> GetLeffa()
-        {
-            return _leffat;
-        }
-
         public void AddLeffa(Leffa leffa)
         {
             _leffat.Add(leffa);
+        }
+
+        public IList<Leffa> GetLeffa()
+        {
+            return _leffat;
         }
 
         public void DeleteLeffa(int id)
