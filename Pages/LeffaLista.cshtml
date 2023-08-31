@@ -1,38 +1,38 @@
 ﻿@page
 @model WebApp.Pages.LeffaListaModel
-@{     
+@{
     ViewData["Title"] = "leffalista";
 }
 
 <div class="text-center">
     <h1>Leffalista</h1>
-   
+
 </div>
 
-<h1>LeffaLista</h1>
-
-<table class="table mt-4">
+<table class="table mt-5">
     <thead>
         <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Size</th>
-            <th scope="col">Delete</th>
+            <th scope="col">Nimi</th>
+            <th scope="col">Kesto</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Kieli</th>
+            <th scope="col">Poista Elokuva</th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var leffa in Model.LeffaLista)
-    {
-        <tr>
-            <td>@leffa.Name</td>
-            <td>@($"{leffa.Price:C}")</td>
-            <td>@leffa.Size</td>
-            <td>
-                <form method="post" asp-page-handler="Delete" asp-route-id="@leffa.Id">
-                    <button class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-        </tr>
-    }
+        @foreach (var leffa in Model.LeffaLista)
+        {
+            <tr>
+                <td>@leffa.Nimi</td>
+                <td>@leffa.Kesto</td>
+                <td>@leffa.Genre</td>
+                <td>@leffa.Kieli</td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@leffa.Id">
+                        <button class="btn btn-danger">Poista Elokuva</button>
+                    </form>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
